@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake data</title>
+    <style>
+        th,td{
+            padding: 10px 20px 10px 2px;
+            font-size: 20px;
+        }
+        h2{font-size: 50px;
+        color:red;
+        text-align: center
+        }
+    </style>
+</head>
+<body>
+<h2>Common details</h2>
+{% if fdata %}
+    <center>
+    <table border="2"
+           <thread>
+               <tr>
+                   <th>first name</th>
+                   <th>last name</th>
+                   <th>email</th>
+                   <th>salary</th>
+                   <th>location</th>
+                   <th>job</th>
+               </tr>
+           </thread>
+           <tbody>
+           {% for i in fdata %}
+           <tr>
+               <td>{{ i.first_name }}</td>
+               <td>{{ i.last_name }}</td>
+               <td>{{ i.sal }}</td>
+               <td>{{ i.loc }}</td>
+               <td>{{ i.job }}</td>
+           </tr>
+           {% endfor %}
+           </tbody>
+    {% else %}
+<h2>Data is not available</h2>
+{% endif %}
+    </table>
+</center>
+</body>
+</html>
